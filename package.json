@@ -1,0 +1,19 @@
+{
+    "name": "jsaqa_hw6_cypress2",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "cypress": "^14.3.0",
+        "@eslint/js": "^9.24.0",
+        "eslint": "^9.24.0",
+        "eslint-config-prettier": "^10.1.2",
+        "prettier": "^3.5.3"
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "validAdmin": {
+    "login": "qamid@qamid.ru",
+    "password": "qamid"
+  },
+
+  "invalidAdmin": {
+    "login": "qamid@qamid.ru",
+    "password": "123"
+  }
+}

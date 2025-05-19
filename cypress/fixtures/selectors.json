@@ -1,0 +1,8 @@
+{
+    "adminLogin": "[name='email']",
+    "adminPassword": "[name='password']",
+    "headerTitle": "Идёмвкино",
+    "adminTitle": "Администраторррская",
+    "navLinks": ".page-nav > a",
+    "adminAuth": "Авторизоваться"
+}
