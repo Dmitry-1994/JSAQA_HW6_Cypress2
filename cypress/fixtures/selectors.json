@@ -14,5 +14,6 @@
     "buttonNameRezerv": "Забронировать",
     "titleNameCheck": "Вы выбрали билеты:",
     "buttonNameCheck": "Получить код бронирования",
-    "checkDetailsOfSeats": ".ticket__details.ticket__chairs"
+    "checkDetailsOfSeats": ".ticket__details.ticket__chairs",
+    "hallArea": ".buying-scheme"
 }
