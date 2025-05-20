@@ -1,16 +1,26 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-Cypress.Commands.add("loginAdmin", (email, password) => {
-    cy.get(locatorAdminLogin).type(email);
-    cy.get(locatorAdminPassword).type(password);
-    cy.contains("Авторизоваться").click();
+const selectors = require("../fixtures/selectors.json");
+//const adminData = require("../fixtures/adminData.json");
+
+Cypress.Commands.add("loginAdmin", (login, password) => {
+    cy.get(selectors.adminLogin).type(login);
+    cy.get(selectors.adminPassword).type(password);
+    cy.contains(selectors.adminAuth).click();
+});
+
+Cypress.Commands.add("getTextElement", locator => {
+    return cy
+        .get(locator)
+        .should("be.visible")
+        .invoke("text")
+        .then(text => text.trim());
+});
+
+Cypress.Commands.add("choiceTime", (navText, navHall) => {
+    cy.get(navText).then(text => {
+        cy.contains(selectors.movieObject, text).find(navHall).click();
+    });
+});
+
+Cypress.Commands.add("choiceDay", locator => {
+    cy.get(locator).click();
 });

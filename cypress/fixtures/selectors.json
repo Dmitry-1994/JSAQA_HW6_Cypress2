@@ -4,5 +4,11 @@
     "headerTitle": "Идёмвкино",
     "adminTitle": "Администраторррская",
     "navLinks": ".page-nav > a",
-    "adminAuth": "Авторизоваться"
+    "adminAuth": "Авторизоваться",
+    "massageError": "Ошибка авторизации!",
+    "movieId": "[data-film-id=\"131\"]",
+    "movieName": ".conf-step__movie-title",
+    "navOfDay": "a:nth-child(2)",
+    "movieObject": ".movie",
+    "navHall": "[data-seance-id=\"223\"]"
 }
