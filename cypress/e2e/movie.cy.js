@@ -1,6 +1,7 @@
 describe("Базовый функционал", () => {
     const selectors = require("../fixtures/selectors.json");
     const adminData = require("../fixtures/adminData.json");
+    const seats = require("../fixtures/seatsData.json");
 
     it("Отображение главное страницы", () => {
         cy.visit("/");
@@ -27,7 +28,7 @@ describe("Базовый функционал", () => {
         cy.contains(selectors.massageError).should("be.visible");
     });
 
-    it("Успешное бронирование фальма в зале", () => {
+    it.only("Успешное бронирование фальма в зале", () => {
         cy.visit("/admin");
 
         cy.loginAdmin(
@@ -44,5 +45,16 @@ describe("Базовый функционал", () => {
         cy.choiceDay(selectors.navOfDay);
 
         cy.choiceTime("@textValue", selectors.navHall);
+        cy.contains("Забронировать").should("be.disabled");
+
+        seats.forEach(({ row, seat }) => {
+            cy.choiceSeat(row, seat);
+        });
+
+        cy.contains("Забронировать").should("not.be.disabled").click();
+        cy.contains("Вы выбрали билеты:").should("be.visible");
+        cy.contains("Получить код бронирования")
+            .should("not.be.disabled")
+            .should("be.visible");
     });
 });

@@ -10,5 +10,5 @@
     "movieName": ".conf-step__movie-title",
     "navOfDay": "a:nth-child(2)",
     "movieObject": ".movie",
-    "navHall": "[data-seance-id=\"223\"]"
+    "navHall": "20:00"
 }

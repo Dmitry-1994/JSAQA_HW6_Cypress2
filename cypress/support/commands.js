@@ -17,10 +17,14 @@ Cypress.Commands.add("getTextElement", locator => {
 
 Cypress.Commands.add("choiceTime", (navText, navHall) => {
     cy.get(navText).then(text => {
-        cy.contains(selectors.movieObject, text).find(navHall).click();
+        cy.contains(selectors.movieObject, text).contains(navHall).click();
     });
 });
 
 Cypress.Commands.add("choiceDay", locator => {
     cy.get(locator).click();
+});
+
+Cypress.Commands.add("choiceSeat", (row, seat) => {
+    cy.get(`.buying-scheme :nth-child(${row}) > :nth-child(${seat})`).click();
 });
