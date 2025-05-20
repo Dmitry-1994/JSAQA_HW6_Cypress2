@@ -10,5 +10,9 @@
     "movieName": ".conf-step__movie-title",
     "navOfDay": "a:nth-child(2)",
     "movieObject": ".movie",
-    "navHall": "20:00"
+    "navHall": "20:00",
+    "buttonNameRezerv": "Забронировать",
+    "titleNameCheck": "Вы выбрали билеты:",
+    "buttonNameCheck": "Получить код бронирования",
+    "checkDetailsOfSeats": ".ticket__details.ticket__chairs"
 }

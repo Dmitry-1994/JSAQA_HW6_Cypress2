@@ -28,3 +28,9 @@ Cypress.Commands.add("choiceDay", locator => {
 Cypress.Commands.add("choiceSeat", (row, seat) => {
     cy.get(`.buying-scheme :nth-child(${row}) > :nth-child(${seat})`).click();
 });
+
+Cypress.Commands.add("checkSeat", (row, seat) => {
+    cy.get(selectors.checkDetailsOfSeats)
+        .contains(`${row}/${seat}`)
+        .should("be.visible");
+});

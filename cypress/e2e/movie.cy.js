@@ -45,15 +45,22 @@ describe("Базовый функционал", () => {
         cy.choiceDay(selectors.navOfDay);
 
         cy.choiceTime("@textValue", selectors.navHall);
-        cy.contains("Забронировать").should("be.disabled");
+        cy.contains(selectors.buttonNameRezerv).should("be.disabled");
 
         seats.forEach(({ row, seat }) => {
             cy.choiceSeat(row, seat);
         });
 
-        cy.contains("Забронировать").should("not.be.disabled").click();
-        cy.contains("Вы выбрали билеты:").should("be.visible");
-        cy.contains("Получить код бронирования")
+        cy.contains(selectors.buttonNameRezerv)
+            .should("not.be.disabled")
+            .click();
+        cy.contains(selectors.titleNameCheck).should("be.visible");
+
+        seats.forEach(({ row, seat }) => {
+            cy.checkSeat(row, seat);
+        });
+
+        cy.contains(selectors.buttonNameCheck)
             .should("not.be.disabled")
             .should("be.visible");
     });
