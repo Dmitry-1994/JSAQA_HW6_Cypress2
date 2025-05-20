@@ -28,7 +28,7 @@ describe("Базовый функционал", () => {
         cy.contains(selectors.massageError).should("be.visible");
     });
 
-    it.only("Успешное бронирование фальма в зале", () => {
+    it("Успешное бронирование фальма в зале", () => {
         cy.visit("/admin");
 
         cy.loginAdmin(
